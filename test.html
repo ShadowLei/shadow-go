@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<title>Test Html</title>
+		<script type="text/javascript">
+		function Log(text) {
+			document.getElementById("divTest").innerText += text;
+			document.getElementById("divTest").innerText += "\n";
+		}
+		function Cat() {
+			//this.name = "cat";
+		}/*
+		function Cat(name) {
+			this.name = name;
+		}*/
+		Cat.prototype.name = "cater";	//default
+		Cat.prototype.sound = function(text) {
+			if (text == null) {
+				text = "";
+			}
+			Log("Miao~~~:" + text);
+		};
+
+		function Test() {
+			var c = new Cat();
+			Log(c.name);
+			c.name = "ker";
+			Log(c.name);
+			c.sound("ops...");
+			c.sound("ss");
+
+			var k = new Cat();
+			Log(k.name);
+		}
+		</script>
+	</head>
+	<body>
+		<div>Test here:</div><br/>
+		<div id="divTest"></div>
+		<script type="text/javascript">Test();</script>
+	</body>
+</html>
